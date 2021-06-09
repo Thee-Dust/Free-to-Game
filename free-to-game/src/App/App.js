@@ -16,9 +16,10 @@ export default function App() {
       const gameData = fetchGameData()
       setFreeGames(cleanGameData(gameData))
     }catch{
-
+      setError('Failed to recieve games')
     }
   }
+  
   return (
     <div>
       
