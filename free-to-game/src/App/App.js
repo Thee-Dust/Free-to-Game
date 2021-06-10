@@ -8,21 +8,23 @@ export default function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    callGames()
-  },[freeGames])
-
-  callGames = async () => {
-    try{
-      const gameData = fetchGameData()
-      setFreeGames(cleanGameData(gameData))
-    }catch{
-      setError('Failed to recieve games')
+    const callGames = async () => {
+      setError('')
+      try{
+        const gameData = fetchGameData()
+        setFreeGames(gameData)
+        console.log(gameData)
+      }catch{
+        setError('Failed to recieve games')
+      }
     }
-  }
-  
+    callGames()
+  },[])
+    
+
   return (
     <div>
-      
+      hello
     </div>
   )
 }
