@@ -13,7 +13,6 @@ export default function App() {
       try{
         const gameData = await fetchGameData()
         setFreeGames(gameData)
-        console.log(gameData)
       }catch{
         setError('Failed to recieve games')
       }
@@ -23,9 +22,9 @@ export default function App() {
     
 
   return (
-    <div>
-      hello
-    </div>
+    <main>
+      <Navbar />
+    </main>
   )
 }
 
