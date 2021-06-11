@@ -3,6 +3,7 @@ import fetchGameData from '../../ApiData/ApiCall'
 import cleanGameData from '../../ApiData/CleanApiCall'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
+import { Switch, Route } from 'react-router-dom'
 import './App.css'
 
 export default function App() {
@@ -26,7 +27,11 @@ export default function App() {
   return (
     <main>
       <Navbar />
-      <Home games={freeGames}/>
+      <Switch>
+        <Route exact path ='/'>
+          <Home games={freeGames}/>
+        </Route>
+      </Switch>
     </main>
   )
 }
