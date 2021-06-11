@@ -7,6 +7,10 @@ export default function Navbar() {
       <div>
         <span>Username</span>
         <span>picture</span>
+        <div>
+          <Link>Wishlist</Link>
+          <button>Log out</button>
+        </div>
       </div>
     </header>
   )
