@@ -1,10 +1,11 @@
 import React from 'react'
+import GameCard from
 
 export default function Home({ games }) {
   const gameCards = games.map(game => {
     const {id, title, thumbnail, description, url, genre, publisher, releaseDate} = game
     return (
-      <GameCards
+      <GameCard
       id={id}
       title={title}
       thumbnail={thumbnail}
@@ -18,7 +19,7 @@ export default function Home({ games }) {
   })
   return (
     <div>
-      
+      {gameCards}
     </div>
   )
 }
