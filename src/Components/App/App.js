@@ -1,8 +1,10 @@
 import React, { useState, useEffect }from 'react'
+import { Switch, Route } from 'react-router-dom'
 import fetchGameData from '../../ApiData/ApiCall'
-import cleanGameData from '../../ApiData/CleanApiCall'
+import cleanGameData from '../../ApiData/CleanApicall'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
+import GameDetails from '../GameDetails/GameDetails'
 import './App.css'
 
 export default function App() {
@@ -13,7 +15,7 @@ export default function App() {
     const callGames = async () => {
       setError('')
       try{
-        const gameData = await fetchGameData()
+        const gameData = await fetchGameData('games?sort-by=alphabetical')
         setFreeGames(cleanGameData(gameData))
       }catch{
         setError('Failed to recieve games')
@@ -26,7 +28,16 @@ export default function App() {
   return (
     <main>
       <Navbar />
-      <Home games={freeGames}/>
+      <Switch>
+        <Route exact path ='/'>
+          <Home games={freeGames}/>
+        </Route>
+        <Route path="/:id"
+        render={({ match }) => {
+          const id = parseInt(match.params.id);
+          return <GameDetails id={id}/>
+        }}/>
+      </Switch>
     </main>
   )
 }
