@@ -11,10 +11,7 @@ export default function Home({ games }) {
       title={title}
       thumbnail={thumbnail}
       description={description}
-      url={url}
       genre={genre}
-      publisher={publisher}
-      releaseDate={releaseDate}
       />
     )
   })
