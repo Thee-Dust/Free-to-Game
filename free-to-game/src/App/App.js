@@ -1,8 +1,6 @@
 import React, { useState, useEffect }from 'react'
-import fetchGameData from '../../ApiData/ApiCall'
-import cleanGameData from '../../ApiData/CleanApiCall'
-import Navbar from '../Navbar/Navbar'
-import Home from '../Home/Home'
+import fetchGameData from '../ApiData/ApiCall'
+import cleanGameData from '../ApiData/CleanApicall'
 import './App.css'
 
 export default function App() {
@@ -13,8 +11,9 @@ export default function App() {
     const callGames = async () => {
       setError('')
       try{
-        const gameData = await fetchGameData()
-        setFreeGames(cleanGameData(gameData))
+        const gameData = fetchGameData()
+        setFreeGames(gameData)
+        console.log(gameData)
       }catch{
         setError('Failed to recieve games')
       }
@@ -24,10 +23,8 @@ export default function App() {
     
 
   return (
-    <main>
-      <Navbar />
-      <Home games={freeGames}/>
-    </main>
+    <div>
+      hello
+    </div>
   )
 }
-
