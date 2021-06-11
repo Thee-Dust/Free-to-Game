@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Navbar() {
   return (
     <header>
-      <Link>Free 2 Game</Link>
+      <Link to='/'>Free 2 Game</Link>
       <div>
         <span>Username</span>
         <span>picture</span>

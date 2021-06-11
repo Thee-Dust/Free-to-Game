@@ -1,9 +1,10 @@
 import React, { useState, useEffect }from 'react'
+import { Switch, Route } from 'react-router-dom'
 import fetchGameData from '../../ApiData/ApiCall'
 import cleanGameData from '../../ApiData/CleanApicall'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
-import { Switch, Route } from 'react-router-dom'
+import GameDetails from '../GameDetails/GameDetails'
 import './App.css'
 
 export default function App() {
@@ -32,10 +33,11 @@ export default function App() {
         <Route exact path ='/'>
           <Home games={freeGames}/>
         </Route>
-        <Route path=':id'
+        <Route path="/:id"
         render={({ match }) => {
-          const id = match.params.id;
-          return <GameDetails id={id} games={freeGames}/>
+          const id = parseInt(match.params.id);
+          const clickedGame = freeGames.find(game => game.id === id)
+          return <GameDetails game={clickedGame}/>
         }}/>
       </Switch>
     </main>

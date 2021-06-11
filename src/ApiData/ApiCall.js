@@ -3,7 +3,7 @@ export default async function fetchGameData() {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": process.env.FREE_TO_GAME_API_KEY,
-		"x-rapidapi-host": process.env.FREE_TO_GAME_API_HOST
+		"x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
 	}
 })
   return response.json()
