@@ -16,8 +16,7 @@ export default function App() {
       setError('')
       try{
         const gameData = await fetchGameData()
-        console.log(cleanGameData(gameData))
-        setFreeGames(gameData)
+        setFreeGames(cleanGameData(gameData))
       }catch{
         setError('Failed to recieve games')
       }
