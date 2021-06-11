@@ -7,7 +7,7 @@ export default function cleanGameData(gameData) {
       thumbnail: thumbnail,
       description: short_description,
       url: game_url,
-      gene: genre,
+      genre: genre,
       publisher: publisher,
       releaseDate: release_date
     }

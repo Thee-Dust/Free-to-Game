@@ -25,6 +25,7 @@ export default function App() {
   return (
     <main>
       <Navbar />
+      <Home games={freeGames}/>
     </main>
   )
 }
