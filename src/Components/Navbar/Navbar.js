@@ -8,7 +8,7 @@ export default function Navbar() {
         <span>Username</span>
         <span>picture</span>
         <div>
-          <Link>Wishlist</Link>
+          <span>Wishlist</span>
           <button>Log out</button>
         </div>
       </div>
