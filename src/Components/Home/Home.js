@@ -1,5 +1,5 @@
 import React from 'react'
-import GameCard from
+import GameCard from '../GameCard/GameCard'
 
 export default function Home({ games }) {
   const gameCards = games.map(game => {
