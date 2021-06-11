@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import fetchGameData from '../../ApiData/ApiCall'
-import cleanGameData from '../../ApiData/CleanApiCall'
+import cleanGameData from '../../ApiData/CleanApicall'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
 import { Switch, Route } from 'react-router-dom'
@@ -15,7 +15,8 @@ export default function App() {
       setError('')
       try{
         const gameData = await fetchGameData()
-        setFreeGames(cleanGameData(gameData))
+        console.log(cleanGameData(gameData))
+        setFreeGames(gameData)
       }catch{
         setError('Failed to recieve games')
       }
@@ -31,6 +32,7 @@ export default function App() {
         <Route exact path ='/'>
           <Home games={freeGames}/>
         </Route>
+        <Route path=':id'/>
       </Switch>
     </main>
   )
