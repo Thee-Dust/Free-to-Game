@@ -15,7 +15,7 @@ export default function App() {
     const callGames = async () => {
       setError('')
       try{
-        const gameData = await fetchGameData()
+        const gameData = await fetchGameData('games?sort-by=alphabetical')
         setFreeGames(cleanGameData(gameData))
       }catch{
         setError('Failed to recieve games')
@@ -35,8 +35,7 @@ export default function App() {
         <Route path="/:id"
         render={({ match }) => {
           const id = parseInt(match.params.id);
-          const clickedGame = freeGames.find(game => game.id === id)
-          return <GameDetails game={clickedGame}/>
+          return <GameDetails id={id}/>
         }}/>
       </Switch>
     </main>
