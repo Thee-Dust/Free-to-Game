@@ -32,7 +32,11 @@ export default function App() {
         <Route exact path ='/'>
           <Home games={freeGames}/>
         </Route>
-        <Route path=':id'/>
+        <Route path=':id'
+        render={({ match }) => {
+          const id = match.params.id;
+          return <GameDetails id={id} games={freeGames}/>
+        }}/>
       </Switch>
     </main>
   )
