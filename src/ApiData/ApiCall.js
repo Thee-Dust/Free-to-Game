@@ -1,5 +1,5 @@
 export default async function fetchGameData() {
-  const response = await fetch("https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc", {
+  const response = await fetch("https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": process.env.FREE_TO_GAME_API_KEY,

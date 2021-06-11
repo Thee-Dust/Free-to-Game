@@ -2,6 +2,7 @@ import React, { useState, useEffect }from 'react'
 import fetchGameData from '../../ApiData/ApiCall'
 import cleanGameData from '../../ApiData/CleanApiCall'
 import Navbar from '../Navbar/Navbar'
+import Home from '../Home/Home'
 import './App.css'
 
 export default function App() {
