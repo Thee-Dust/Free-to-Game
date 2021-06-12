@@ -1,0 +1,11 @@
+.card-section {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 20px;
+  text-align: center;
+  padding: 20px 20px 60px;
+  min-height: 756px;
+}
