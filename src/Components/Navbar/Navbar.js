@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Navbar.css'
 
 export default function Navbar() {
   return (
     <header>
-      <Link to='/'>Free 2 Game</Link>
-      <div>
-        <span>Username</span>
-        <span>picture</span>
-        <div>
-          <span>Wishlist</span>
-          <button>Log out</button>
-        </div>
+      <Link to='/'><h1>Free 2 Game</h1></Link>
+      <div className="user-display">
+        <span>picture
+          <ul className='user-options'>
+            <li><Link to='/wishlist'>Wishlist</Link></li>
+            <li><button>Log out</button></li>
+          </ul>
+        </span>
       </div>
     </header>
   )
