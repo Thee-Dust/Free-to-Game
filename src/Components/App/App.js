@@ -48,7 +48,7 @@ const addWishlist = (gameName) => {
         <Route path="/:id"
         render={({ match }) => {
           const id = parseInt(match.params.id);
-          return <GameDetails id={id} addWishlist={addWishlist} error={error}/>
+          return <GameDetails id={id} addWishlist={addWishlist} error={error} wishlist={wishlist}/>
         }}/>
       </Switch>
     </main>
