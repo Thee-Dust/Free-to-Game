@@ -43,7 +43,7 @@ const addWishlist = (gameName) => {
           <Home games={freeGames}/>
         </Route>
         <Route path='/wishlist'>
-          <Wishlist games={freeGames} wishlist={wishlist}/>
+          <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
         </Route>
         <Route path="/:id"
         render={({ match }) => {
