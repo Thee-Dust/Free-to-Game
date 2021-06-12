@@ -2,7 +2,7 @@ import React from 'react'
 import GameCard from '../GameCard/GameCard'
 import './Home.css'
 
-export default function Home({ games }) {
+export default function Home({ games, error }) {
   const gameCards = games.map(game => {
     const {id, title, thumbnail, description, genre } = game
     return (
@@ -17,8 +17,11 @@ export default function Home({ games }) {
     )
   })
   return (
-    <div className='card-section'>
-      {gameCards}
-    </div>
+    <>
+      {error && <h1>{error}</h1>}
+      <div className='card-section'>
+        {gameCards}
+      </div>
+    </>
   )
 }

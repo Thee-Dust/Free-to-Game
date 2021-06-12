@@ -40,7 +40,7 @@ const addWishlist = (gameName) => {
       <Navbar />
       <Switch>
         <Route exact path ='/'>
-          <Home games={freeGames}/>
+          <Home games={freeGames} error={error}/>
         </Route>
         <Route path='/wishlist'>
           <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
@@ -48,7 +48,7 @@ const addWishlist = (gameName) => {
         <Route path="/:id"
         render={({ match }) => {
           const id = parseInt(match.params.id);
-          return <GameDetails id={id}/>
+          return <GameDetails id={id} addWishlist={addWishlist} error={error}/>
         }}/>
       </Switch>
     </main>

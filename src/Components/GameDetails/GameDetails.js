@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import fetchGameData from '../../ApiData/ApiCall'
 import { Link } from 'react-router-dom'
 
-export default function GameDetails({ id }) {
+export default function GameDetails({ id, addWishlist, error }) {
   const [ freeGame, setFreeGame ] = useState('')
   const [ error, setError ] = useState('')
 
