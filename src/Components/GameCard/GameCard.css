@@ -1,0 +1,9 @@
+.card {
+  background-color: #32383E;
+}
+
+
+.card > img {
+  width: 100%;
+}
+

@@ -1,5 +1,6 @@
 import React from 'react'
 import GameCard from '../GameCard/GameCard'
+import './Home.css'
 
 export default function Home({ games }) {
   const gameCards = games.map(game => {
@@ -16,7 +17,7 @@ export default function Home({ games }) {
     )
   })
   return (
-    <div>
+    <div className='card-section'>
       {gameCards}
     </div>
   )
