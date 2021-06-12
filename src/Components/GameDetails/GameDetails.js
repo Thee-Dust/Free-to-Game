@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import fetchGameData from '../../ApiData/ApiCall'
 import { Link } from 'react-router-dom'
 
-export default function GameDetails({ id, addWishlist, error }) {
+export default function GameDetails({ id, addWishlist }) {
   const [ freeGame, setFreeGame ] = useState('')
   const [ error, setError ] = useState('')
 
@@ -29,7 +29,7 @@ export default function GameDetails({ id, addWishlist, error }) {
         <div>
           <h2>{freeGame.title}</h2>
           <div>
-          <button>Add to wishlist</button>
+          <button onClick={() => addWishlist(freeGame.title)}>Add to wishlist</button>
           <a href={freeGame.game_url}>Download now</a>
           </div>
         </div>

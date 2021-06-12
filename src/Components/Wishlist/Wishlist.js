@@ -1,4 +1,5 @@
 import React from 'react'
+import GameCard from '../GameCard/GameCard'
 
 export default function Wishlist({ games, wishlist, error }) {
   const wishlistGames = games.filter(game => wishlist.includes(game.title))
