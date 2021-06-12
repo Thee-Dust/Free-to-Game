@@ -13,6 +13,10 @@ header > a {
   color: white;
 }
 
+header > a > h1:hover {
+  color: #B0B0B0;
+}
+  
 header>a:visited {
   color: white;
 }
@@ -28,6 +32,7 @@ header>a:visited {
   position: relative;
   width: 150px;
 }
+
 
 .user-display li span {
   display: block;
