@@ -9,7 +9,8 @@ import './App.css'
 
 export default function App() {
   const [ freeGames, setFreeGames] = useState([])
-  const [error, setError] = useState('')
+  const [ error, setError ] = useState('')
+  const [ wishlist, setWishlist ] = useState([])
 
   useEffect(() => {
     const callGames = async () => {
