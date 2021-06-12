@@ -1,0 +1,76 @@
+header {
+  width: 100%;
+  position: relative;
+  background-color: #272B30;
+  height: 60px;
+}
+
+header > a {
+  float: left;
+  line-height: 55px;
+  padding: 0px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+header>a:visited {
+  color: white;
+}
+
+.user-display {
+  float: right;
+}
+
+.user-display > li {
+  color: white;
+  float: left;
+  list-style: none;
+  position: relative;
+  width: 150px;
+}
+
+.user-display li span {
+  display: block;
+  font-size: 16px;
+  padding: 20px 40px;
+
+}
+
+.user-options {
+  display: none;
+  position: absolute;
+  background-color: #272B30;
+  padding: 24px;
+  width: 92px;
+  border-radius: 0 0 8px 8px;
+}
+
+.user-display li:hover .user-options{
+  display: block;
+}
+.user-options > li {
+  list-style: none;
+  padding: 8px 14px;
+}
+
+.user-options>li>a {
+  color: white;
+  text-decoration: none;
+}
+
+.user-options>li>a:visited {
+  color: white;
+}
+
+.user-options > li > a,
+.user-options > li > span {
+  background-color: none;
+  width: 60px;
+  font-size: 16px;
+  padding: 8px 14px;
+}
+
+.user-options>li>a:hover,
+.user-options>li>span:hover {
+  color: #B0B0B0;
+}

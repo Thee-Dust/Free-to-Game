@@ -21,6 +21,7 @@ export default function GameDetails({ id }) {
 
 
   if(freeGame){
+    console.log(freeGame)
     return (
       <div>
         <Link to ='/'><i className="fas fa-arrow-left"></i></Link>
