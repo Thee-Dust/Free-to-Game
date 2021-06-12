@@ -1,0 +1,28 @@
+.details-page {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.back-button {
+  margin-left: 5%;
+  font-size: 40px;
+  z-index: 10;
+  color: white;
+}
+
+.back-button:hover {
+  color: #b0b0b0;
+}
+
+.details-options {
+  width: 35%
+}
+
+.details-options > img {
+  width: 100%;
+}
+
+.game-details {
+  width: 40%
+}
