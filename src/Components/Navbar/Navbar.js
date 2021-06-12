@@ -7,7 +7,7 @@ export default function Navbar() {
     <header>
       <Link to='/'><h1>Free 2 Game</h1></Link>
       <ul className="user-display">
-        <li><span>picture</span>
+        <li><span>UserName</span>
           <ul className='user-options'>
             <li><Link to='/wishlist'>Wishlist</Link></li>
             <li><span>Log out</span></li>

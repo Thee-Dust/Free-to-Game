@@ -1,7 +1,7 @@
 header {
   width: 100%;
   position: relative;
-  background-color: gray;
+  background-color: #272B30;
   height: 60px;
 }
 
@@ -9,6 +9,12 @@ header > a {
   float: left;
   line-height: 55px;
   padding: 0px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+header>a:visited {
+  color: white;
 }
 
 .user-display {
@@ -16,6 +22,7 @@ header > a {
 }
 
 .user-display > li {
+  color: white;
   float: left;
   list-style: none;
   position: relative;
@@ -32,7 +39,7 @@ header > a {
 .user-options {
   display: none;
   position: absolute;
-  background-color: gray;
+  background-color: #272B30;
   padding: 24px;
   width: 92px;
   border-radius: 0 0 8px 8px;
@@ -46,6 +53,15 @@ header > a {
   padding: 8px 14px;
 }
 
+.user-options>li>a {
+  color: white;
+  text-decoration: none;
+}
+
+.user-options>li>a:visited {
+  color: white;
+}
+
 .user-options > li > a,
 .user-options > li > span {
   background-color: none;
@@ -56,5 +72,5 @@ header > a {
 
 .user-options>li>a:hover,
 .user-options>li>span:hover {
-  background-color: white;
+  color: #B0B0B0;
 }
