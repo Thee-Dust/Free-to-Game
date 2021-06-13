@@ -84,4 +84,17 @@
   line-height: 20px;
   font-size: 20px;
   word-spacing: 8px;
+  margin-bottom: 40px;
+}
+
+.screen-shots {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.screen-shots > img {
+  width: 32%;
+  height: 150px;
 }

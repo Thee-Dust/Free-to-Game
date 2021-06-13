@@ -51,11 +51,11 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
         <div className='game-details'>
           <h2>ABOUT</h2>
           <p>{freeGame.description}</p>
-          <div>
-            <h2>{freeGame.title} ScreenShots</h2>
-            <img src={freeGame.screenshots[0].image}/>
-            <img src={freeGame.screenshots[1].image}/>
-            <img src={freeGame.screenshots[2].image}/>
+          <h2>{freeGame.title} Screeshots</h2>
+          <div className='screen-shots'>
+            <img src={freeGame.screenshots[0].image} alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[1].image} alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[2].image} alt={`screen-shot for ${freeGame.title}`}/>
           </div>
         </div>
       </div>
