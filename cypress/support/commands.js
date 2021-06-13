@@ -22,4 +22,14 @@
 //
 //
 // -- This will overwrite an existing command --
+
+
+
+
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+cypress.Comands.add('interceptGames', () => {
+  cypress.fixture('../fixtures/GameData.json')
+  .then(json => {
+    cy.intercept('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical', json)
+  })
+})
