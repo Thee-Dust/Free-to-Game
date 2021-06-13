@@ -35,6 +35,7 @@ const addWishlist = (gameName) => {
     callGames()
   },[])
 
+  console.log(freeGames)
   return (
     <main>
       <Navbar />
