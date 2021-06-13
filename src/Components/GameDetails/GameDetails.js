@@ -35,7 +35,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
             ? <button className='option-bttn download' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
             : <button className='option-bttn' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i class="fas fa-heart"></i></button>}
           </div>
-          <div>
+          <div className='game-info'>
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
             <span>System requirements:</span>
