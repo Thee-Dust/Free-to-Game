@@ -21,9 +21,12 @@ export default function Wishlist({ games, wishlist, error }) {
       {error && <h1>{error}</h1>}
       {!wishlist.length && !error && <h1>You have nothing in your wishlist</h1>}
       {wishlist.length &&  
+      <>
+        <h1>WishList</h1>
         <div className='card-section'>
           {wishedGamesCards}
-        </div>}
+        </div>
+      </>}
     </>
   )
 }
