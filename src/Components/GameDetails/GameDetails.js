@@ -8,7 +8,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
   const [ freeGame, setFreeGame ] = useState('')
   const [ error, setError ] = useState('')
 
-  const callGames = async () => {
+  const callGames = async (id) => {
     setError('')
     try{
       const gameData = await fetchGameData(`game?id=${id}`)
@@ -17,9 +17,6 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
       setError('Failed to recieve games')
     }
   }
-
-
-
 
   useEffect(() => {
     callGames(id)

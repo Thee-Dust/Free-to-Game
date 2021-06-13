@@ -18,7 +18,7 @@ export default function Home({ games, error }) {
     )
   })
   return (
-    <div>
+    <div className='home'>
       {error && <h1>{error}</h1>}
       <div className='card-section'>
         {gameCards}
