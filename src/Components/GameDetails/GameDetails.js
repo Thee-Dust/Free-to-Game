@@ -26,14 +26,15 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
     return (
       <div className='details-page'>
         <Link to ='/'><i className="fas fa-arrow-left back-button"></i></Link>
-        <div className='details-options'>
-        <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
+        <div className='details-description'>
+          <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
-          <div>
+          <div className='details-options'>
+            <button className='option-bttn'><a href={freeGame.game_url}>Download now</a></button>
             {!wishlist.includes(freeGame.title)
-            ? <button onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
-            : <button onClick={() => addWishlist(freeGame.title)}><i class="fas fa-heart"></i></button>}
-          <a href={freeGame.game_url}>Download now</a>
+            ? <button className='option-bttn' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
+            : <button className='option-bttn' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i class="fas fa-heart"></i></button>}
+          </div>
           <div>
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
@@ -46,10 +47,9 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
               <li>{`Operating System: ${freeGame.minimum_system_requirements.os}`}</li>
             </ul>
           </div>
-          </div>
         </div>
         <div className='game-details'>
-            <h2>ABOUT</h2>
+          <h2>ABOUT</h2>
           <p>{freeGame.description}</p>
           <div>
             <h2>{freeGame.title} ScreenShots</h2>

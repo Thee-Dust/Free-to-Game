@@ -1,7 +1,7 @@
 .details-page {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .back-button {
@@ -15,14 +15,70 @@
   color: #b0b0b0;
 }
 
-.details-options {
+.details-description {
   width: 35%
 }
 
-.details-options > img {
+.details-description > img {
   width: 100%;
 }
 
+.details-description > h1 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.details-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.details-options > button > a {
+  text-decoration: none;
+  color: white
+}
+
+.option-bttn {
+  border-color: #4799EB;
+  background: #272B30;
+  color: white;
+  display: flex;
+  text-align: center;
+  max-width: 220px;
+  height: 20px;
+  padding: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option-bttn:hover {
+  background: #4799EB;
+}
+
 .game-details {
-  width: 40%
+  width: 50%
+}
+
+.game-details > h2 {
+  color: #e9e9e9;
+}
+
+.game-details > h2::after{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #4799EB;
+}
+
+.game-details > p {
+  margin-top: 12px;
+  color: #b0b0b0;
+  line-height: 20px;
+  font-size: 20px;
+  word-spacing: 8px;
 }
