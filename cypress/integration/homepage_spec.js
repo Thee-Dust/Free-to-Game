@@ -2,7 +2,7 @@
 describe("Home Page", () => {
   beforeEach(() => {
     cy.interceptGames()
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
   })
 
   it('Should be able to see game cards', () => {
