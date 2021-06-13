@@ -1,5 +1,6 @@
 import React from 'react'
 import GameCard from '../GameCard/GameCard'
+import PropTypes from 'prop-types'
 
 export default function Wishlist({ games, wishlist, error }) {
   const wishlistGames = games.filter(game => wishlist.includes(game.title))
@@ -17,16 +18,22 @@ export default function Wishlist({ games, wishlist, error }) {
     )
   })
   return (
-    <>
+    <div>
       {error && <h1>{error}</h1>}
       {!wishlist.length && !error && <h1>You have nothing in your wishlist</h1>}
       {wishlist.length &&  
-      <>
+      <div>
         <h1>WishList</h1>
         <div className='card-section'>
           {wishedGamesCards}
         </div>
-      </>}
-    </>
+      </div>}
+    </div>
   )
 }
+
+Wishlist.propTypes = {
+  games: PropTypes.array,
+  wishlist: PropTypes.array,
+  error: PropTypes.string
+};

@@ -28,7 +28,7 @@ const addWishlist = (gameName) => {
       try{
         const gameData = await fetchGameData('games?sort-by=alphabetical')
         setFreeGames(cleanGameData(gameData))
-      }catch{
+      }catch (e){
         setError('Failed to recieve games')
       }
     }
@@ -47,7 +47,7 @@ const addWishlist = (gameName) => {
         </Route>
         <Route path="/:id"
         render={({ match }) => {
-          const id = parseInt(match.params.id);
+          const id = match.params.id;
           return <GameDetails id={id} addWishlist={addWishlist} error={error} wishlist={wishlist}/>
         }}/>
       </Switch>
