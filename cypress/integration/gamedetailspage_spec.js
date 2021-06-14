@@ -17,6 +17,13 @@ describe('Detail page', () => {
       .get('.remove-wishlist').get('.fas')
   })
 
+  it('Should be able to remove game from wishlist', () => {
+    cy.get('.add-wishlist').click()
+      .get('.remove-wishlist').get('.fas')
+      .get('.remove-wishlist').click()
+      .get('add.wishlist').get('.fas')
+  })
+
   it('Should be able to go to website to download', () => {
     cy.get('.details-options > :nth-child(1)').contains('a')
   })
