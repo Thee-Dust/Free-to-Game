@@ -15,10 +15,11 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   text-align: center;
-  margin: 20px 20px;
   min-height: 756px;
 }
 
+
+/*~~~~~~Media Queries~~~~~~*/
 @media screen and (max-width: 1080px) and (min-width: 860px) {
   .card-section {
     grid-template-columns: repeat(4, 1fr);
@@ -41,7 +42,6 @@
 }
 @media screen and (max-width: 424px) {
   .card-section {
-    width: 100%;
     grid-template-columns: repeat(2, 150px);
     grid-gap: 10px;
   }

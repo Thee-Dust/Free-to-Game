@@ -34,3 +34,20 @@
   text-align: end;
   margin-right: 8px;
 }
+
+/*~~~~~~Media Queries~~~~~~*/
+@media screen and (max-width: 1080px) and (min-width: 700px) {
+  .card {
+    height: 280px;
+  }
+}
+
+  @media screen and (max-width: 424px) {
+  .card {
+    height: 300px;
+  }
+
+  .card-detail > h2 {
+    font-size: 18px;
+  }
+}  
