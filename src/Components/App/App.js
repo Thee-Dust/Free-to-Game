@@ -24,6 +24,7 @@ export default function App() {
   }
 
   const findSearch = (ref) => {
+    console.log(ref)
     setsearch(ref)
   }
 
@@ -42,10 +43,10 @@ export default function App() {
 
   return (
     <main>
-      <Navbar />
+      <Navbar findSearch={findSearch}/>
       <Switch>
         <Route exact path ='/'>
-          <Home games={freeGames} error={error} searchedGames={search} findSearch={findSearch}/>
+          <Home games={freeGames} error={error} searchedGames={search} />
         </Route>
         <Route path='/wishlist'>
           <Wishlist games={freeGames} wishlist={wishlist} error={error}/>

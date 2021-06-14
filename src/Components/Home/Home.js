@@ -20,7 +20,7 @@ export default function Home({ games, error, searchedGames }) {
   })
 
   if(searchedGames){
-    const searchResults = gameCards.map(game => game.props.title.toLowerCase().includes(searchedGames.toLowerCase()))
+    const searchResults = gameCards.filter(game => game.props.title.toLowerCase().includes(searchedGames.toLowerCase()))
     return(
       <div className='home'>
         {!searchResults.length && <h1>It looks like no movies match your search. Please try searching something else</h1>}
