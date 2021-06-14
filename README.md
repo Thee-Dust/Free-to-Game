@@ -34,11 +34,11 @@ A React application featuring 320 games from Free-to-Games API. Users can go and
 
 ## Functionality
 ### View Game Details 
-<iframe src="https://giphy.com/embed/9h0rzXNsZyKqve0XF6" width="480" height="210" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/game-details-9h0rzXNsZyKqve0XF6">via GIPHY</a></p>
+![View Game Details](https://media.giphy.com/media/9h0rzXNsZyKqve0XF6/giphy-downsized.gif)
 ### Wishlist
-![Wishlist](http://www.giphy.com/gifs/OBLGcOp8IGu1Isk3CJ)
+![Wishlist](https://media.giphy.com/media/OBLGcOp8IGu1Isk3CJ/giphy.gif)
 ### Download Game
-![Download Game](http://www.giphy.com/gifs/KJGi5MY8KJandLNfX8)
+![Download Game](https://media.giphy.com/media/KJGi5MY8KJandLNfX8/giphy.gif)
 
 
 ## Credits
