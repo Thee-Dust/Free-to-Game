@@ -12,10 +12,10 @@ describe('Detail page', () => {
     cy.url().should('eq', 'http://localhost:3000/306')
   })
 
-  // it('Should be able to add game to wishlist', () => {
-  //   cy.get('.add-wishlist').click()
-  //     .get('.remove-wishlist').get('.fas')
-  // })
+  it('Should be able to add game to wishlist', () => {
+    cy.get('.add-wishlist').click()
+      .get('.remove-wishlist').get('.fas')
+  })
 
   // it('Should be able to go to website to download', () => {
   //   cy.get('.details-options > :nth-child(1)').contains('a')
