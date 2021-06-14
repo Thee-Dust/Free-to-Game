@@ -12,15 +12,20 @@ export default function App() {
   const [ freeGames, setFreeGames] = useState([])
   const [ error, setError ] = useState('')
   const [ wishlist, setWishlist ] = useState([])
+  const [ search, setsearch ] = useState('')
 
 
-const addWishlist = (gameName) => {
-  if(!wishlist.includes(gameName)) {
-    setWishlist([...wishlist, gameName])
-  } else {
-    setWishlist(wishlist.filter(game => game !== gameName))
+  const addWishlist = (gameName) => {
+    if(!wishlist.includes(gameName)) {
+      setWishlist([...wishlist, gameName])
+    } else {
+      setWishlist(wishlist.filter(game => game !== gameName))
+    }
   }
-}
+
+  const findSearch = (ref) => {
+    setsearch(ref)
+  }
 
   useEffect(() => {
     const callGames = async () => {
@@ -35,13 +40,12 @@ const addWishlist = (gameName) => {
     callGames()
   },[])
 
-  console.log(freeGames)
   return (
     <main>
       <Navbar />
       <Switch>
         <Route exact path ='/'>
-          <Home games={freeGames} error={error}/>
+          <Home games={freeGames} error={error} searchedGames={search} findSearch={findSearch}/>
         </Route>
         <Route path='/wishlist'>
           <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
