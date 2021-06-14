@@ -9,6 +9,7 @@ describe("Home Page", () => {
     cy.get('.card-section').children().should('have.length', 18)
   })
 
+
   it('Should have 4Story as first game', () => {
     cy.get('.card-section')
     .get('.card')

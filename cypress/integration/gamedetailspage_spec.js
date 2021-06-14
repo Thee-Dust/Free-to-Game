@@ -12,6 +12,22 @@ describe('Detail page', () => {
     cy.url().should('eq', 'http://localhost:3000/306')
   })
 
+  it('Should show games name', () => {
+    cy.get('.details-description')
+      .find('img')
+      .should('have.attr', 'src', 'https://www.freetogame.com/g/306/thumbnail.jpg')
+  })
+
+  it('Should Show genre', () => {
+    cy.get('.game-info')
+      .get('.game-info > :nth-child(1)').contains('MMORPG')
+  })
+
+  it('Should show developer', () => {
+    cy.get('.game-info')
+      .get('.game-info > :nth-child(2)').contains('Developed by Zemi Interactive')
+  })
+
   it('Should have games title', () => {
     cy.get('.details-description > h1')
       .contains('4Story')
@@ -58,6 +74,6 @@ describe('Detail page', () => {
     cy.get('.screen-shots')
     .get("[data-cy='pic1']").should('have.attr', 'src', 'https://www.freetogame.com/g/306/4Story-1.jpg')
     .get("[data-cy='pic2']").should('have.attr', 'src', 'https://www.freetogame.com/g/306/4Story-2.jpg')
-    .get("[data-cy='pic3']").eq(2).should('have.attr', 'src', 'https://www.freetogame.com/g/306/4Story-3.jpg')
+    .get("[data-cy='pic3']").should('have.attr', 'src', 'https://www.freetogame.com/g/306/4Story-3.jpg')
   })
 })
