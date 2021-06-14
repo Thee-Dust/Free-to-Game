@@ -17,9 +17,9 @@ describe('Detail page', () => {
       .get('.remove-wishlist').get('.fas')
   })
 
-  // it('Should be able to go to website to download', () => {
-  //   cy.get('.details-options > :nth-child(1)').contains('a')
-  // })
+  it('Should be able to go to website to download', () => {
+    cy.get('.details-options > :nth-child(1)').contains('a')
+  })
 
   // it('Should be able to return to home screen', () => {
   //   cy.get('.details-page > a').click()
