@@ -21,8 +21,8 @@ describe('Detail page', () => {
     cy.get('.details-options > :nth-child(1)').contains('a')
   })
 
-  // it('Should be able to return to home screen', () => {
-  //   cy.get('.details-page > a').click()
-  //   cy.url().should('eq', 'http://localhost:3000/')
-  // })
+  it('Should be able to return to home screen', () => {
+    cy.get('.details-page > a').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
 })
