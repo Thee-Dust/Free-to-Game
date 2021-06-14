@@ -22,6 +22,21 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
     callGames(id)
   }, [id])
 
+  if(error){
+    return(
+      <h1>{error}</h1>
+    )
+  }
+
+  if(!freeGame && !error) {
+    return(
+      <div className='loading-box'>
+        <h1>Loading....</h1>
+        <h2>Asking a nerd for the game info</h2>
+      </div>
+    )
+  }
+
   if(freeGame){
     return (
       <div className='details-page'>
