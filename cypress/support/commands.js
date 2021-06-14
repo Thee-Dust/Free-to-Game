@@ -32,9 +32,9 @@ Cypress.Commands.add('interceptGames', () => {
   .then(json => {
     cy.intercept('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical', json)
   })
-})
-Cypress.Commands.add('interseptSingleGame', () => {
-  cy.fixture('../fixture/singleGameData.json')
+});
+Cypress.Commands.add('interceptSingleGame', () => {
+  cy.fixture('../fixtures/SingleGameData.json')
   .then(json => {
     cy.intercept('https://free-to-play-games-database.p.rapidapi.com/api/game?id=306', json)
   })

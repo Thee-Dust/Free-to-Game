@@ -32,8 +32,8 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
           <div className='details-options'>
             <button className='option-bttn'><a href={freeGame.game_url}>Download now</a></button>
             {!wishlist.includes(freeGame.title)
-            ? <button className='option-bttn download' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
-            : <button className='option-bttn' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart"></i></button>}
+            ? <button className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
+            : <button className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart"></i></button>}
           </div>
           <div className='game-info'>
             <p>{freeGame.genre}</p>
