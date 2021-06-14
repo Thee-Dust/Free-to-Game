@@ -1,7 +1,7 @@
 # Free 2 Game
 
-### Table of Contents- 
-   [Free2game](#Free-2-Game)
+### Table of Contents
+  - [Free2game](#Free-2-Game)
     - [Table of Contents](#table-of-contents)
     - [Overview](#overview)
   - [Technologies Used](#technologies-used)
@@ -12,7 +12,7 @@
   - [Credits](#credits)
       - [Authors](#authors)
       - [Project Managers](#project-managers)
-        - [2021/06/06](#20210606)
+        - [2021/06/14](#20210614)
 
 ### Overview
 A React application featuring 320 games from Free-to-Games API. Users can go and click on a game card that takes them to a detail page where a user can add to their wishlist and or go to the desired games website to download the game. 
