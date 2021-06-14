@@ -43,6 +43,6 @@
 @media screen and (max-width: 424px) {
   .card-section {
     grid-template-columns: repeat(2, 150px);
-    grid-gap: 10px;
+    width: 95%;
   }
 }
