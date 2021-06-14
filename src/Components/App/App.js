@@ -49,7 +49,7 @@ const addWishlist = (gameName) => {
         <Route path="/:id"
         render={({ match }) => {
           const id = match.params.id;
-          return <GameDetails id={id} addWishlist={addWishlist} error={error} wishlist={wishlist}/>
+          return <GameDetails id={id} addWishlist={addWishlist} wishlist={wishlist}/>
         }}/>
       </Switch>
     </main>
