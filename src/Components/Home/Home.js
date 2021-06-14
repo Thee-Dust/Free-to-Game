@@ -3,7 +3,7 @@ import GameCard from '../GameCard/GameCard'
 import PropTypes from 'prop-types'
 import './Home.css'
 
-export default function Home({ games, error, searchedGames }) {
+export default function Home({ games, error, searchedGames, changeView }) {
 
   const gameCards = games.map(game => {
     const {id, title, thumbnail, description, genre } = game
@@ -15,6 +15,7 @@ export default function Home({ games, error, searchedGames }) {
       thumbnail={thumbnail}
       description={description}
       genre={genre}
+      changeView={changeView}
       />
     )
   })
@@ -46,8 +47,9 @@ export default function Home({ games, error, searchedGames }) {
   )
 }
 
-Home.prototype = {
+Home.propTypes = {
   games: PropTypes.array,
   error: PropTypes.string,
-  searchedGames: PropTypes.string
+  searchedGames: PropTypes.string,
+  changeView: PropTypes.func
 };

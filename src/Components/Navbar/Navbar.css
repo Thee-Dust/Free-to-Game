@@ -95,3 +95,7 @@ header > input {
 .user-options>li>span:hover {
   color: #B0B0B0;
 }
+
+.hidden {
+  display: none
+}

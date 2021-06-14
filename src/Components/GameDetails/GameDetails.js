@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './GameDetails.css'
 
-export default function GameDetails({ id, addWishlist, wishlist }) {
+export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
   const [ freeGame, setFreeGame ] = useState('')
   const [ error, setError ] = useState('')
 
@@ -40,7 +40,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
   if(freeGame){
     return (
       <div className='details-page'>
-        <Link to ='/'><i className="fas fa-arrow-left back-button"></i></Link>
+        <Link to ='/' onClick={() => changeView(true)}><i className="fas fa-arrow-left back-button"></i></Link>
         <div className='details-description'>
           <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
@@ -84,6 +84,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
 GameDetails.propTypes = {
   id: PropTypes.string,
   addWishlist: PropTypes.func,
-  wishlist: PropTypes.array
+  wishlist: PropTypes.array,
+  changeView: PropTypes.func
 }
 

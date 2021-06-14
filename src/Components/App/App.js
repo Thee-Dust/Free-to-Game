@@ -13,6 +13,7 @@ export default function App() {
   const [ error, setError ] = useState('')
   const [ wishlist, setWishlist ] = useState([])
   const [ search, setsearch ] = useState('')
+  const [ view , setView] = useState(true)
 
 
   const addWishlist = (gameName) => {
@@ -26,6 +27,10 @@ export default function App() {
   const findSearch = (ref) => {
     console.log(ref)
     setsearch(ref)
+  }
+
+  const changeView = (bool) => {
+    setView(bool)
   }
 
   useEffect(() => {
@@ -43,10 +48,10 @@ export default function App() {
 
   return (
     <main>
-      <Navbar findSearch={findSearch}/>
+      <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
       <Switch>
         <Route exact path ='/'>
-          <Home games={freeGames} error={error} searchedGames={search} />
+          <Home games={freeGames} error={error} searchedGames={search} changeView={changeView}/>
         </Route>
         <Route path='/wishlist'>
           <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
@@ -54,7 +59,7 @@ export default function App() {
         <Route path="/:id"
         render={({ match }) => {
           const id = match.params.id;
-          return <GameDetails id={id} addWishlist={addWishlist} wishlist={wishlist}/>
+          return <GameDetails id={id} addWishlist={addWishlist} wishlist={wishlist} changeView={changeView}/>
         }}/>
       </Switch>
     </main>
