@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './GameDetails.css'
 
-export default function GameDetails({ id, addWishlist, wishlist }) {
+export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
   const [ freeGame, setFreeGame ] = useState('')
   const [ error, setError ] = useState('')
 
@@ -22,10 +22,25 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
     callGames(id)
   }, [id])
 
+  if(error){
+    return(
+      <h1>{error}</h1>
+    )
+  }
+
+  if(!freeGame && !error) {
+    return(
+      <div className='loading-box'>
+        <h1>Loading....</h1>
+        <h2>Asking a nerd for the game info</h2>
+      </div>
+    )
+  }
+
   if(freeGame){
     return (
       <div className='details-page'>
-        <Link to ='/'><i className="fas fa-arrow-left back-button"></i></Link>
+        <Link to ='/' onClick={() => changeView(true)}><i className="fas fa-arrow-left back-button"></i></Link>
         <div className='details-description'>
           <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
@@ -39,7 +54,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
             <div className='system-req'>
-              <h2>System requirements:</h2>
+              <h2>System requirements</h2>
               <ul>
                 <li>{`Graphics: ${freeGame.minimum_system_requirements.graphics}`}</li>
                 <li>{`Storage: ${freeGame.minimum_system_requirements.storage}`}</li>
@@ -55,9 +70,9 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
           <p>{freeGame.description}</p>
           <h2>{freeGame.title} Screeshots</h2>
           <div className='screen-shots'>
-            <img src={freeGame.screenshots[0].image} alt={`screen-shot for ${freeGame.title}`}/>
-            <img src={freeGame.screenshots[1].image} alt={`screen-shot for ${freeGame.title}`}/>
-            <img src={freeGame.screenshots[2].image} alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[0].image} data-cy='pic1' alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[1].image} data-cy='pic2' alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[2].image} data-cy='pic3' alt={`screen-shot for ${freeGame.title}`}/>
           </div>
         </div>
       </div>
@@ -69,6 +84,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
 GameDetails.propTypes = {
   id: PropTypes.string,
   addWishlist: PropTypes.func,
-  wishlist: PropTypes.array
+  wishlist: PropTypes.array,
+  changeView: PropTypes.func
 }
 
