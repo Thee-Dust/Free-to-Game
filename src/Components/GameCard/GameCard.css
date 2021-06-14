@@ -2,7 +2,7 @@
   background-color: #32383E;
   text-decoration: none;
   color: white;
-  height: 280px;
+  height: 320px;
 }
 
 .card-img {
@@ -12,7 +12,8 @@
 .card-detail {
   display: flex;
   flex-direction: column;
-  justify-content: space-around
+  justify-content: space-between;
+  height: 46%;
 }
 
 .card-title {
