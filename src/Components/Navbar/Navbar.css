@@ -3,6 +3,9 @@ header {
   position: relative;
   background-color: #272B30;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header > a {
@@ -21,8 +24,20 @@ header>a:visited {
   color: white;
 }
 
-.user-display {
+header > input {
   float: right;
+  text-align: center;
+}
+
+.head-options {
+  display: flex;
+  align-items: center;
+}
+
+.head-options > input {
+  padding: 8px;
+  border-radius: 50px;
+  outline: none;
 }
 
 .user-display > li {
