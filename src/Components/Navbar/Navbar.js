@@ -10,7 +10,7 @@ export default function Navbar({ findSearch, view, changeView }) {
     <header>
       <Link to='/' onClick={() => changeView(true)}><h1>Free 2 Game</h1></Link>
       <div className='head-options'>
-        { view && <input type='text' ref={searchRef} onChange={(() => findSearch(searchRef.current.value))} placeholder='Search games here'></input>}
+        { view && <input type='text' ref={searchRef} onChange={(() => findSearch(searchRef.current.value))} placeholder='Search games'></input>}
         <ul className="user-display">
           <li><span>UserName</span>
             <ul className='user-options'>

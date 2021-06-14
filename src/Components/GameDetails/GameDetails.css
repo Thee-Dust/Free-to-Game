@@ -158,3 +158,45 @@
   -webkit-box-shadow: 5px 5px 5px 0px #00000066;
   box-shadow: 5px 5px 5px 0px #00000066;
 }
+
+/*~~~~~~Media Queries~~~~~~*/
+@media screen and (max-width: 950px) and (min-width: 550px) {
+  .details-options {
+    flex-direction: column;
+  }
+
+  .details-options > button {
+    margin-bottom: 12px;
+  }
+
+  .game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .game-info > p {
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .details-page {
+    flex-direction: column;
+  }
+
+  .details-description,
+  .game-details {
+    width: 100%;
+  }
+
+  .details-description {
+    margin-top: 12px;
+  }
+
+  .game-info {
+    margin-bottom: 20px;
+  }
+}
