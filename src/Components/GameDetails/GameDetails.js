@@ -37,6 +37,12 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
     )
   }
 
+  if(error){
+    return(
+      <h1>{error}</h1>
+    )
+  }
+
   if(freeGame){
     return (
       <div className='details-page'>
@@ -78,7 +84,6 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
       </div>
     )
   }
-  return null
 }
 
 GameDetails.propTypes = {

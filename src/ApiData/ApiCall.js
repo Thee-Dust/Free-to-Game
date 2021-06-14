@@ -6,5 +6,14 @@ export default async function fetchGameData(query) {
 		"x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
 	}
 })
-  return response.json()
+  const data = errorHandler(response);
+  return data
+}
+
+const errorHandler = (response) => {
+  if (!response.ok) {
+    throw new Error(response.message);
+  } else {
+    return response.json();
+  }
 }
