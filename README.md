@@ -1,6 +1,7 @@
 # Free 2 Game
 
-### Table of Contents- [Pokedex](#pokedex)
+### Table of Contents- 
+   [Free2game](#Free-2-Game)
     - [Table of Contents](#table-of-contents)
     - [Overview](#overview)
   - [Technologies Used](#technologies-used)
