@@ -20,6 +20,11 @@ export default function Home({ games, error }) {
   return (
     <div className='home'>
       {error && <h1>{error}</h1>}
+      {!freeGame && !error &&
+      <div className='loading-box'>
+        <h1>Loading....</h1>
+        <h2>Going to Gamestop to fetch the games</h2>
+      </div>}
       <div className='card-section'>
         {gameCards}
       </div>
