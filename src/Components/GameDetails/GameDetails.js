@@ -54,7 +54,7 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
             <div className='system-req'>
-              <h2>System requirements:</h2>
+              <h2>System requirements</h2>
               <ul>
                 <li>{`Graphics: ${freeGame.minimum_system_requirements.graphics}`}</li>
                 <li>{`Storage: ${freeGame.minimum_system_requirements.storage}`}</li>
@@ -70,9 +70,9 @@ export default function GameDetails({ id, addWishlist, wishlist }) {
           <p>{freeGame.description}</p>
           <h2>{freeGame.title} Screeshots</h2>
           <div className='screen-shots'>
-            <img src={freeGame.screenshots[0].image} alt={`screen-shot for ${freeGame.title}`}/>
-            <img src={freeGame.screenshots[1].image} alt={`screen-shot for ${freeGame.title}`}/>
-            <img src={freeGame.screenshots[2].image} alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[0].image} data-cy='pic1' alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[1].image} data-cy='pic2' alt={`screen-shot for ${freeGame.title}`}/>
+            <img src={freeGame.screenshots[2].image} data-cy='pic3' alt={`screen-shot for ${freeGame.title}`}/>
           </div>
         </div>
       </div>
