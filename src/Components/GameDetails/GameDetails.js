@@ -44,6 +44,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
   }
 
   if(freeGame){
+    console.log(freeGame)
     return (
       <div className='details-page'>
         <Link to ='/' onClick={() => changeView(true)}><i className="fas fa-arrow-left back-button"></i></Link>
@@ -59,6 +60,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
           <div className='game-info'>
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
+            {freeGame.minimum_system_requirements &&
             <div className='system-req'>
               <h2>System requirements</h2>
               <ul>
@@ -69,6 +71,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
                 <li>{`Operating System: ${freeGame.minimum_system_requirements.os}`}</li>
               </ul>
             </div>
+            }
           </div>
         </div>
         <div className='game-details'>
