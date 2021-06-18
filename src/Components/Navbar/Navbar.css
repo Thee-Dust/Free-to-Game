@@ -1,0 +1,133 @@
+header {
+  width: 100%;
+  position: relative;
+  background-color: #272B30;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > a {
+  float: left;
+  line-height: 55px;
+  padding: 0px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+header > a > h1:hover {
+  color: #B0B0B0;
+}
+  
+header>a:visited {
+  color: white;
+}
+
+header > input {
+  float: right;
+  text-align: center;
+}
+
+.head-options {
+  display: flex;
+  align-items: center;
+}
+
+.head-options > input {
+  padding: 8px;
+  border-radius: 50px;
+  outline: none;
+}
+
+.user-display > li {
+  color: white;
+  list-style: none;
+  position: relative;
+  width: 150px;
+}
+
+
+.user-display li span {
+  cursor: default;
+  display: block;
+  font-size: 16px;
+  padding: 20px 20px;
+
+}
+
+.user-options {
+  display: none;
+  position: absolute;
+  background-color: #272B30;
+  padding: 24px;
+  width: 92px;
+  border-radius: 0 0 8px 8px;
+}
+
+.user-display li:hover .user-options{
+  display: block;
+}
+.user-options > li {
+  list-style: none;
+  padding: 8px 14px;
+}
+
+.user-options>li>a {
+  color: white;
+  text-decoration: none;
+}
+
+.user-options>li>a:visited {
+  color: white;
+}
+
+.user-options > li > a,
+.user-options > li > span {
+  background-color: none;
+  width: 60px;
+  font-size: 16px;
+  padding: 8px 14px;
+}
+
+.user-options>li>a:hover,
+.user-options>li>span:hover {
+  color: #B0B0B0;
+}
+
+/*~~~~~~Media Queries~~~~~~*/
+@media screen and (max-width: 550px) {
+  header > a {
+    font-size: 8px;
+    width: 100px;
+  }
+
+  header > a > h1 {
+    width: 100px;
+  }
+
+  .head-options > input {
+    width: 60px;
+  }
+
+  .user-display {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .user-display > li {
+    margin: 0;
+    width: 100px;
+  }
+
+  .user-display > li > span {
+    width: 60px;
+    margin: 0;
+  }
+
+  .user-options {
+    width: 100px;
+    font-size: 12px;
+    padding: 0px;
+  }
+}

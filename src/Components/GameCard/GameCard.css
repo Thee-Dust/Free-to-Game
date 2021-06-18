@@ -1,0 +1,53 @@
+.card {
+  background-color: #32383E;
+  text-decoration: none;
+  color: white;
+  height: 320px;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 46%;
+}
+
+.card-title {
+  text-align: start;
+  margin-left: 12px;
+}
+
+.card-descrip {
+  margin: 12px;
+}
+
+.card-descrip,
+.card-genre {
+  color: #B0B0B0
+}
+
+.card-genre {
+  text-align: end;
+  margin-right: 8px;
+}
+
+/*~~~~~~Media Queries~~~~~~*/
+@media screen and (max-width: 1080px) and (min-width: 700px) {
+  .card {
+    height: 280px;
+  }
+}
+
+  @media screen and (max-width: 424px) {
+  .card {
+    height: 300px;
+  }
+
+  .card-detail > h2 {
+    font-size: 18px;
+  }
+}  
