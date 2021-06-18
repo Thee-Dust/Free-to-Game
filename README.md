@@ -1,4 +1,4 @@
-# Free 2 Game
+# Game 4 Free
 
 ### Table of Contents
   - [Free2game](#Free-2-Game)
