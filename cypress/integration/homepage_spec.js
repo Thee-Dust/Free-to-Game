@@ -43,7 +43,7 @@ describe("Home Page", () => {
     cy.get('header')
     .get('a')
     .get('h1')
-    .contains('Free 2 Game')
+    .contains('Game 4 Free')
     .get('.user-display')
     .contains('UserName')
   })
