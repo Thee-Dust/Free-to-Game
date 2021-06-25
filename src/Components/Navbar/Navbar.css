@@ -39,6 +39,10 @@ header > input {
   border-radius: 50px;
   outline: none;
 }
+.icon {
+  color: #4799EB;
+  margin: 0 4px;
+}
 
 .user-display > li {
   color: white;
@@ -61,8 +65,10 @@ header > input {
   position: absolute;
   background-color: #272B30;
   padding: 24px;
+  padding-left: 12px;
   width: 92px;
   border-radius: 0 0 8px 8px;
+  text-align: center;
 }
 
 .user-display li:hover .user-options{
@@ -71,27 +77,38 @@ header > input {
 .user-options > li {
   list-style: none;
   padding: 8px 14px;
+  padding-left: 0;
+  width: 100px;
 }
 
 .user-options>li>a {
   color: white;
   text-decoration: none;
+  font-size: 16px;
+}
+
+.user-options>li>button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .user-options>li>a:visited {
   color: white;
 }
 
-.user-options > li > a,
-.user-options > li > span {
+/* .user-options > li > a,
+.user-options > li > button {
   background-color: none;
-  width: 60px;
+  width: 100px;
   font-size: 16px;
   padding: 8px 14px;
-}
+} */
 
 .user-options>li>a:hover,
-.user-options>li>span:hover {
+.user-options>li>button:hover {
   color: #B0B0B0;
 }
 

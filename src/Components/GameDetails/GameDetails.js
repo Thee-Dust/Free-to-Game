@@ -52,7 +52,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
           <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
           <div className='details-options'>
-            <button className='option-bttn'><a href={freeGame.game_url}>Download now</a></button>
+            <a className='option-bttn' href={freeGame.game_url}>Download now</a>
             {!wishlist.includes(freeGame.title)
             ? <button className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
             : <button className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart"></i></button>}
