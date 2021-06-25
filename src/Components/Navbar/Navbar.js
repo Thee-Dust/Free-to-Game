@@ -15,7 +15,7 @@ export default function Navbar({ findSearch, view, changeView }) {
           <li><span>UserName<i className="fas fa-caret-down icon"></i></span>
             <ul className='user-options'>
               <li><Link to='/wishlist' onClick={() => changeView(false)}><i className="fas fa-heart icon"></i>Wishlist</Link></li>
-              <li><button><i class="fas fa-sign-out-alt icon"></i>Log out</button></li>
+              <li><button><i className="fas fa-sign-out-alt icon"></i>Log out</button></li>
             </ul>
           </li>
         </ul>
