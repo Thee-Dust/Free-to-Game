@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
 import GameDetails from '../GameDetails/GameDetails'
 import Wishlist from '../Wishlist/Wishlist'
+import Signup from '../Signup/Signup'
 import './App.css'
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
       <AuthProvider>
         <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
         <Switch>
+          <Route path='/signup' component={Signup} />
           <Route exact path ='/'>
             <Home games={freeGames} error={error} searchedGames={search} changeView={changeView}/>
           </Route>
