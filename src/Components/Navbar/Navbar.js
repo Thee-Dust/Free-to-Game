@@ -1,10 +1,23 @@
 import React, {useRef} from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { useAuth } from '../../Context/AuthContext'
 import './Navbar.css'
 
 export default function Navbar({ findSearch, view, changeView }) {
   const searchRef = useRef()
+  const { signOut } = useAuth()
+  const history = useHistory()
+
+  async function handleLogout(e) {
+    e.preventDefault()
+    try{
+      await signOut()
+      history.push('/')
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
 
   return (
     <header>
@@ -15,7 +28,7 @@ export default function Navbar({ findSearch, view, changeView }) {
           <li><span>UserName<i className="fas fa-caret-down icon"></i></span>
             <ul className='user-options'>
               <li><Link to='/wishlist' onClick={() => changeView(false)}><i className="fas fa-heart icon"></i>Wishlist</Link></li>
-              <li><button><i className="fas fa-sign-out-alt icon"></i>Log out</button></li>
+              <li><button onClick={handleLogout}><i className="fas fa-sign-out-alt icon"></i>Sign out</button></li>
             </ul>
           </li>
         </ul>
