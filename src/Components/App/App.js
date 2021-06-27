@@ -9,6 +9,7 @@ import GameDetails from '../GameDetails/GameDetails'
 import Wishlist from '../Wishlist/Wishlist'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import './App.css'
 
 export default function App() {
@@ -55,17 +56,27 @@ export default function App() {
         <Switch>
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
-          <Route exact path ='/'>
-            <Home games={freeGames} error={error} searchedGames={search} changeView={changeView}/>
-          </Route>
-          <Route path='/wishlist'>
-            <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
-          </Route>
+          <PrivateRoute 
+            exact path ='/'
+            component={Home}
+            games={freeGames} 
+            error={error}
+            searchedGames={search} 
+            changeView={changeView}
+          />
+          <PrivateRoute 
+            path='/wishlist'
+            component={Wishlist} 
+            games={freeGames} 
+            wishlist={wishlist} 
+            error={error}
+          />
           <Route path="/:id"
-          render={({ match }) => {
-            const id = match.params.id;
-            return <GameDetails id={id} addWishlist={addWishlist} wishlist={wishlist} changeView={changeView}/>
-          }}/>
+            component={GameDetails} 
+            addWishlist={addWishlist} 
+            wishlist={wishlist} 
+            changeView={changeView}
+          />
         </Switch>
       </AuthProvider>
     </main>
