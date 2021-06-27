@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../Context/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function Signup() {
   const emailRef = useRef()
@@ -8,6 +9,9 @@ export default function Signup() {
   const passwordConfirmationRef = useRef()
   const { signup } = useAuth()
   const [ error, setError ] = useState('')
+  const [ loading, setLoading ] = useState(false)
+  const history = useHistory()
+
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -16,10 +20,13 @@ export default function Signup() {
     }
     try {
       setError('')
+      setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
+      history.push('/')
     } catch (error) {
       setError('Failed to create an account')
     }
+    setLoading(false)
   }
 
   return (
@@ -41,14 +48,14 @@ export default function Signup() {
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control type="password" ref={passwordConfirmationRef} required/>
             </Form.Group>
-            <Button type='submit'>
+            <Button type='submit' disabled={loading}>
               Sign Up
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div>
-        Already have an account? Log In
+        Already have an account? <Link to='/login'>Login</Link>
       </div>
     </div>
   )
