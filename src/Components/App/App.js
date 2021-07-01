@@ -1,11 +1,15 @@
 import React, { useState, useEffect }from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { AuthProvider } from '../../Context/AuthContext'
 import fetchGameData from '../../ApiData/ApiCall'
 import cleanGameData from '../../ApiData/CleanApicall'
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
 import GameDetails from '../GameDetails/GameDetails'
 import Wishlist from '../Wishlist/Wishlist'
+import Signup from '../Signup/Signup'
+import Login from '../Login/Login'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import './App.css'
 
 export default function App() {
@@ -25,7 +29,6 @@ export default function App() {
   }
 
   const findSearch = (ref) => {
-    console.log(ref)
     setsearch(ref)
   }
 
@@ -48,20 +51,34 @@ export default function App() {
 
   return (
     <main>
-      <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
-      <Switch>
-        <Route exact path ='/'>
-          <Home games={freeGames} error={error} searchedGames={search} changeView={changeView}/>
-        </Route>
-        <Route path='/wishlist'>
-          <Wishlist games={freeGames} wishlist={wishlist} error={error}/>
-        </Route>
-        <Route path="/:id"
-        render={({ match }) => {
-          const id = match.params.id;
-          return <GameDetails id={id} addWishlist={addWishlist} wishlist={wishlist} changeView={changeView}/>
-        }}/>
-      </Switch>
+      <AuthProvider>
+        <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
+        <Switch>
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
+          <PrivateRoute 
+            exact path ='/'
+            component={Home}
+            games={freeGames} 
+            error={error}
+            searchedGames={search} 
+            changeView={changeView}
+          />
+          <PrivateRoute 
+            path='/wishlist'
+            component={Wishlist} 
+            games={freeGames} 
+            wishlist={wishlist} 
+            error={error}
+          />
+          <Route path="/:id"
+            component={GameDetails} 
+            addWishlist={addWishlist} 
+            wishlist={wishlist} 
+            changeView={changeView}
+          />
+        </Switch>
+      </AuthProvider>
     </main>
   )
 }

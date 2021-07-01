@@ -46,19 +46,20 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
   if(freeGame){
     return (
       <div className='details-page'>
-        <Link to ='/' onClick={() => changeView(true)}><i className="fas fa-arrow-left back-button"></i></Link>
+        <Link to ='/' onClick={() => changeView(true)} title='Back to home'><i className="fas fa-arrow-left back-button"></i></Link>
         <div className='details-description'>
           <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
           <div className='details-options'>
-            <button className='option-bttn'><a href={freeGame.game_url}>Download now</a></button>
+            <a className='option-bttn' href={freeGame.game_url} title={`${freeGame.title} website`}>Download now</a>
             {!wishlist.includes(freeGame.title)
-            ? <button className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
-            : <button className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart"></i></button>}
+            ? <button title='save to wishlist' className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
+            : <button title='remove to wishlist' className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart">Remove from Wishlist</i></button>}
           </div>
           <div className='game-info'>
             <p>{freeGame.genre}</p>
             <p>{`Developed by ${freeGame.developer}`}</p>
+            {freeGame.minimum_system_requirements &&
             <div className='system-req'>
               <h2>System requirements</h2>
               <ul>
@@ -69,6 +70,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
                 <li>{`Operating System: ${freeGame.minimum_system_requirements.os}`}</li>
               </ul>
             </div>
+            }
           </div>
         </div>
         <div className='game-details'>
