@@ -44,18 +44,17 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView }) {
   }
 
   if(freeGame){
-    console.log(freeGame)
     return (
       <div className='details-page'>
-        <Link to ='/' onClick={() => changeView(true)}><i className="fas fa-arrow-left back-button"></i></Link>
+        <Link to ='/' onClick={() => changeView(true)} title='Back to home'><i className="fas fa-arrow-left back-button"></i></Link>
         <div className='details-description'>
           <img src={freeGame.thumbnail} alt={`poster for ${freeGame.title}`}/>
           <h1>{freeGame.title}</h1>
           <div className='details-options'>
-            <a className='option-bttn' href={freeGame.game_url}>Download now</a>
+            <a className='option-bttn' href={freeGame.game_url} title={`${freeGame.title} website`}>Download now</a>
             {!wishlist.includes(freeGame.title)
-            ? <button className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
-            : <button className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart"></i></button>}
+            ? <button title='save to wishlist' className='option-bttn add-wishlist' onClick={() => addWishlist(freeGame.title)}><i className="far fa-heart"></i>Add to Wishlist</button>
+            : <button title='remove to wishlist' className='option-bttn remove-wishlist' style={{background: '#4799EB'}} onClick={() => addWishlist(freeGame.title)}><i className="fas fa-heart">Remove from Wishlist</i></button>}
           </div>
           <div className='game-info'>
             <p>{freeGame.genre}</p>
