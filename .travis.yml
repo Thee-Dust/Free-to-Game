@@ -1,0 +1,16 @@
+language: node_js
+node_js: 
+  - "lts/*"
+
+cache:
+  npm: true
+  directories:
+    - ~/.npm
+    - ~./node_modules
+    - ~/.cache
+
+install:
+  - npm ci
+
+script:
+  - npm run ci
