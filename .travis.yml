@@ -1,19 +1,10 @@
 language: node_js
 node_js: 
-  - "lts/*"
+  - "node"
 
-cache:
-  npm: true
-  directories:
-    - ~/.npm
-    - ./node_modules
-    - ~/.cache
-  override:
-    - npm ci
-    - npm run cy:verify
-
-install:
-  - npm ci
+notifications:
+  email: false
 
 script:
-  - npm run ci
+  - npm test
+  - npm run build
