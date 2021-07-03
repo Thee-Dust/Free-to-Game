@@ -6,8 +6,11 @@ cache:
   npm: true
   directories:
     - ~/.npm
-    - ~./node_modules
+    - ./node_modules
     - ~/.cache
+  override:
+    - npm ci
+    - npm run cy:verify
 
 install:
   - npm ci
