@@ -20,9 +20,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
-    "cypress": "./node_module/.bin/cypress open"
+    "cy:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -33,7 +33,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -43,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "start-server-and-test": "^1.12.5",
     "surge": "^0.23.0"
   }
 }
