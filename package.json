@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "start-server-and-test": "^1.12.5",
     "surge": "^0.23.0"
   }
 }
