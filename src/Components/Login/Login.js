@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../Context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import './Login.css'
 
 export default function Login() {
   const emailRef = useRef()
