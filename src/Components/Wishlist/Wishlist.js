@@ -1,8 +1,9 @@
 import React from 'react'
 import GameCard from '../GameCard/GameCard'
 import PropTypes from 'prop-types'
+import Navbar from '../Navbar/Navbar'
 
-export default function Wishlist({ games, wishlist, error }) {
+export default function Wishlist({ games, wishlist, error, view, changeView }) {
   const wishlistGames = games.filter(game => wishlist.includes(game.title))
   const wishedGamesCards = wishlistGames.map(game => {
     const {id, title, thumbnail, description, genre } = game
@@ -18,6 +19,8 @@ export default function Wishlist({ games, wishlist, error }) {
     )
   })
   return (
+    <div>
+      <Navbar changeView={changeView} view={view} />
       <div className='home'>
       {error && <h1>{error}</h1>}
       <h1>WishList</h1>
@@ -27,6 +30,7 @@ export default function Wishlist({ games, wishlist, error }) {
           {wishedGamesCards}
         </div>}
       </div>
+    </div>  
   )
 }
 

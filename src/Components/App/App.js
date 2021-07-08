@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { AuthProvider } from '../../Context/AuthContext'
 import fetchGameData from '../../ApiData/ApiCall'
 import cleanGameData from '../../ApiData/CleanApicall'
-import Navbar from '../Navbar/Navbar'
+
 import Home from '../Home/Home'
 import GameDetails from '../GameDetails/GameDetails'
 import Wishlist from '../Wishlist/Wishlist'
@@ -52,7 +52,6 @@ export default function App() {
   return (
     <main>
       <AuthProvider>
-        <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
         <Switch>
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
@@ -62,7 +61,9 @@ export default function App() {
             games={freeGames} 
             error={error}
             searchedGames={search} 
+            findSearch={findSearch}
             changeView={changeView}
+            view={view}
           />
           <PrivateRoute 
             path='/wishlist'
@@ -70,12 +71,16 @@ export default function App() {
             games={freeGames} 
             wishlist={wishlist} 
             error={error}
+            view={view}
+            changeView={changeView}
           />
-          <Route path="/:id"
+          <Route 
+            path="/:id"
             component={GameDetails} 
             addWishlist={addWishlist} 
             wishlist={wishlist} 
             changeView={changeView}
+            view={view}
           />
         </Switch>
       </AuthProvider>

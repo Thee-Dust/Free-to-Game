@@ -24,11 +24,11 @@ export default function Login() {
 
   return (
     <div>
-      <Card>
+      <Card className='card'>
         <Card.Body>
           <h2>Login</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className='card-form'>
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required/>
