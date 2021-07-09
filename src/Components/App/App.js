@@ -74,7 +74,7 @@ export default function App() {
             view={view}
             changeView={changeView}
           />
-          <Route 
+          <PrivateRoute 
             path="/:id"
             component={GameDetails} 
             addWishlist={addWishlist} 

@@ -12,7 +12,7 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView, vie
   const callGames = async (id) => {
     setError('')
     try{
-      console.log(id)
+
       const gameData = await fetchGameData(`game?id=${id}`)
       setFreeGame(gameData)
     }catch (e) {
@@ -32,22 +32,28 @@ export default function GameDetails({ id, addWishlist, wishlist, changeView, vie
 
   if(!freeGame && !error) {
     return(
-      <div className='loading-box'>
-        <h1>Loading....</h1>
-        <h2>Asking a nerd for the game info</h2>
+      <div className='container'>
+        <Navbar view={view} changeView={changeView}/>
+        <div className='loading-box'>
+          <h1>Loading....</h1>
+          <h2>Asking a nerd for the game info</h2>
+        </div>
       </div>
     )
   }
 
   if(error){
     return(
-      <h1>{error}</h1>
+      <div className='container'>
+        <Navbar view={view} changeView={changeView}/>
+        <h1>{error}</h1>
+      </div>
     )
   }
 
   if(freeGame){
     return (
-      <div>
+      <div className='container'>
         <Navbar view={view} changeView={changeView}/>
         <div className='details-page'>
           <Link to ='/' onClick={() => changeView(true)} title='Back to home'><i className="fas fa-arrow-left back-button"></i></Link>

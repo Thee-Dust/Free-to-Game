@@ -19,7 +19,7 @@ export default function Wishlist({ games, wishlist, error, view, changeView }) {
     )
   })
   return (
-    <div>
+    <div className='container'>
       <Navbar changeView={changeView} view={view} />
       <div className='home'>
       {error && <h1>{error}</h1>}

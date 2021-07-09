@@ -34,7 +34,7 @@ export default function Home({ games, error, searchedGames, changeView, findSear
   }
 
   return (
-    <div>
+    <div className='container'>
       <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
       <div className='home'>
         {error && <h1>{error}</h1>}
