@@ -9,6 +9,8 @@ export default function Login() {
   const passwordRef = useRef()
   const { login } = useAuth()
   const [ error, setError ] = useState('')
+  // error = this.state.error
+  // setError = setState({error: ''})
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -21,7 +23,6 @@ export default function Login() {
       setError('Email or password is incorrect')
     }
   }
-
   return (
     <div>
       <Card className='card'>

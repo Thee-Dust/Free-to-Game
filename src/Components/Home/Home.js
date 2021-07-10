@@ -24,10 +24,13 @@ export default function Home({ games, error, searchedGames, changeView, findSear
   if(searchedGames){
     const searchResults = gameCards.filter(game => game.props.title.toLowerCase().includes(searchedGames.toLowerCase()))
     return(
-      <div className='home'>
-        {!searchResults.length && <h1>It looks like no movies match your search. Please try searching something else</h1>}
-        <div className='card-section'>
-        {searchResults}
+      <div className='container'>
+        <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
+        <div className='home'>
+          {!searchResults.length && <h1>It looks like no movies match your search. Please try searching something else</h1>}
+          <div className='card-section'>
+          {searchResults}
+          </div>
         </div>
       </div>
     )
