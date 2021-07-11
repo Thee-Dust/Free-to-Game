@@ -1,0 +1,86 @@
+.auth {
+  width: 40%;
+  text-align: center;
+}
+
+.card {
+  height: 100%;
+  font-size: 20px;
+  height: 520px;
+  background-color: #32383E;
+  color: white;
+}
+
+.card-body {
+  height: 100%;
+}
+
+.card-body > h2 {
+  padding-top: 12px;
+}
+
+.card-form {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  ;
+}
+
+.form-label {
+  margin-bottom: 8px;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid #4799EB;
+  background: none;
+  outline: none;
+  height: 40px;
+  font-size: 20px;
+  width: 100%;
+  color: #ffffff;
+}
+
+.btn {
+  font-size: 20px;
+  outline: none;
+  width: 50%;
+  height: 60px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: none;
+  border-color: #4799EB;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background: #4799EB;
+}
+
+.switch-auth {
+  margin-top: 20px;
+  color: #B0B0B0;
+  font-size: 20px;
+}
+
+.switch-auth > a {
+  color: #4799EB;
+  text-decoration: none;
+}
+
+.switch-auth > a:visited {
+  color: #4799EB;
+}
+
+.switch-auth>a:hover {
+  color: #397dc1;
+}

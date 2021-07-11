@@ -2,12 +2,15 @@ import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../Context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import './Login.css'
 
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
   const [ error, setError ] = useState('')
+  // error = this.state.error
+  // setError = setState({error: ''})
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -20,14 +23,13 @@ export default function Login() {
       setError('Email or password is incorrect')
     }
   }
-
   return (
-    <div>
-      <Card>
+    <div className='auth'>
+      <Card className='card'>
         <Card.Body>
           <h2>Login</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className='card-form'>
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required/>
@@ -42,7 +44,7 @@ export default function Login() {
           </Form>
         </Card.Body>
       </Card>
-      <div>
+      <div className='switch-auth'>
         Don't have an account? <Link to='/signup'>Sign up</Link>  
       </div>
     </div>

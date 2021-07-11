@@ -19,6 +19,8 @@ export default function Navbar({ findSearch, view, changeView }) {
     }
   }
 
+
+
   return (
     <header>
       <Link to='/' title='Game 4 Free' onClick={() => changeView(true)}><h1>Game 4 Free</h1></Link>

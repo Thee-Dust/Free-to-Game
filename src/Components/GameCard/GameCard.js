@@ -8,7 +8,7 @@ export default function GameCard({ thumbnail, description, title, genre, id ,cha
     return str.slice(0, 50) + '...'
   }
   return (
-    <Link title={title} to={`/${id}`} className='card' onClick={() => changeView(false)} id={id}>
+    <Link title={title} to={`/${id}`} className='game-card' onClick={() => changeView(false)} id={id}>
       <img src={thumbnail} alt={`Poster for ${title}`} className='card-img'></img>
       <div className='card-detail'>
         <h2 className='card-title'>{title}</h2>

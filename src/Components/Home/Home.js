@@ -1,9 +1,10 @@
 import React from 'react'
 import GameCard from '../GameCard/GameCard'
 import PropTypes from 'prop-types'
+import Navbar from '../Navbar/Navbar'
 import './Home.css'
 
-export default function Home({ games, error, searchedGames, changeView }) {
+export default function Home({ games, error, searchedGames, changeView, findSearch, view }) {
 
   const gameCards = games.map(game => {
     const {id, title, thumbnail, description, genre } = game
@@ -23,25 +24,31 @@ export default function Home({ games, error, searchedGames, changeView }) {
   if(searchedGames){
     const searchResults = gameCards.filter(game => game.props.title.toLowerCase().includes(searchedGames.toLowerCase()))
     return(
-      <div className='home'>
-        {!searchResults.length && <h1>It looks like no movies match your search. Please try searching something else</h1>}
-        <div className='card-section'>
-        {searchResults}
+      <div className='container'>
+        <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
+        <div className='home'>
+          {!searchResults.length && <h1>It looks like no movies match your search. Please try searching something else</h1>}
+          <div className='card-section'>
+          {searchResults}
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className='home'>
-      {error && <h1>{error}</h1>}
-      {!games && !error &&
-      <div className='loading-box'>
-        <h1>Loading....</h1>
-        <h2>Going to Gamestop to fetch the games</h2>
-      </div>}
-      <div className='card-section'>
-        {gameCards}
+    <div className='container'>
+      <Navbar findSearch={findSearch} view={view} changeView={changeView}/>
+      <div className='home'>
+        {error && <h1>{error}</h1>}
+        {!games && !error &&
+        <div className='loading-box'>
+          <h1>Loading....</h1>
+          <h2>Going to Gamestop to fetch the games</h2>
+        </div>}
+        <div className='card-section'>
+          {gameCards}
+        </div>
       </div>
     </div>
   )
