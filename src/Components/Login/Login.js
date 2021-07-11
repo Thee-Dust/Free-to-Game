@@ -24,7 +24,7 @@ export default function Login() {
     }
   }
   return (
-    <div>
+    <div className='auth'>
       <Card className='card'>
         <Card.Body>
           <h2>Login</h2>
@@ -44,7 +44,7 @@ export default function Login() {
           </Form>
         </Card.Body>
       </Card>
-      <div>
+      <div className='switch-auth'>
         Don't have an account? <Link to='/signup'>Sign up</Link>  
       </div>
     </div>

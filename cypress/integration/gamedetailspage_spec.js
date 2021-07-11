@@ -1,4 +1,4 @@
-
+n
 
 describe('Detail page', () => {
   beforeEach(() => {

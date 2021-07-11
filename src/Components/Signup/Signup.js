@@ -31,12 +31,12 @@ export default function Signup() {
   }
 
   return (
-    <div>
+    <div className='auth'>
       <Card>
         <Card.Body>
           <h2>Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className='card-form'>
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required/>
@@ -55,7 +55,7 @@ export default function Signup() {
           </Form>
         </Card.Body>
       </Card>
-      <div>
+      <div className='switch-auth'>
         Already have an account? <Link to='/login'>Login</Link>
       </div>
     </div>
