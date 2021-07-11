@@ -7,6 +7,8 @@
   height: 100%;
   font-size: 20px;
   height: 520px;
+  background-color: #32383E;
+  color: white;
 }
 
 .card-body {

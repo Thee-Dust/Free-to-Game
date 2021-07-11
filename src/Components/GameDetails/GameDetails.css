@@ -39,7 +39,8 @@
 }
 
 
-.details-options > button > a {
+.download-bttn {
+  border: 2px solid;
   text-decoration: none;
   color: white
 }
@@ -70,22 +71,20 @@
 
 .game-info > p:nth-child(1) {
   float: right;
-  width: 100px;
+  width: 140px;
   font-size: 16px;
-  border-radius: 20px;
   padding: 4px 0;
   text-align: center;
-  border: 2px solid #4799EB;
+  border-bottom: 2px solid #4799EB;
   color: #e9e9e9;
 }
 
 .game-info > p:nth-child(2) {
-  width: 200px;
+  max-width: 280px;
   font-size: 16px;
-  border-radius: 20px;
   padding: 4px 0;
   text-align: center;
-  border: 2px solid #4799EB;
+  border-bottom: 2px solid #4799EB;
   color: #e9e9e9;
 }
 
