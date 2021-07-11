@@ -1,20 +1,24 @@
 .auth {
   width: 40%;
   text-align: center;
-  height: 520px;
 }
 
 .card {
   height: 100%;
   font-size: 20px;
-  text-align: center;
+  height: 520px;
 }
 
 .card-body {
   height: 100%;
 }
+
+.card-body > h2 {
+  padding-top: 12px;
+}
+
 .card-form {
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,6 +45,7 @@
   height: 40px;
   font-size: 20px;
   width: 100%;
+  color: #ffffff;
 }
 
 .btn {
@@ -62,6 +67,7 @@
 .switch-auth {
   margin-top: 20px;
   color: #B0B0B0;
+  font-size: 20px;
 }
 
 .switch-auth > a {
@@ -71,4 +77,8 @@
 
 .switch-auth > a:visited {
   color: #4799EB;
+}
+
+.switch-auth>a:hover {
+  color: #397dc1;
 }
