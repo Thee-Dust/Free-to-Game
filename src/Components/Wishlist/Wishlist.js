@@ -15,6 +15,7 @@ export default function Wishlist({ games, wishlist, error, view, changeView }) {
       thumbnail={thumbnail}
       description={description}
       genre={genre}
+      changeView={changeView}
       />
     )
   })
