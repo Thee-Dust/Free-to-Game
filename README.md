@@ -19,6 +19,7 @@ A React application featuring 320 games from Free-to-Games API. Users can go and
 
 
  - GitHub Repo [Link](https://github.com/Thee-Dust/Free-to-Game)
+ - Deploy [Link](http://free.games.to.play.surge.sh)
 
 
 
@@ -73,7 +74,6 @@ A React application featuring 320 games from Free-to-Games API. Users can go and
 
 **************************************************************************
 ### Future Features
-  - Impliment Firebase user aunthentication
   - have users name displayed in top right corner
   - have each users data stored in firebases firestore
 
